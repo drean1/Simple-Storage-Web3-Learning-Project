@@ -1,81 +1,93 @@
-#My first hands-on Web3 project, built to learn smart contract development using Solidity, Hardhat, and TypeScript.
+# Simple Storage — Web3 Learning Project
 
-Features
+A beginner-friendly Web3 project built to explore smart contract development using **Solidity, Hardhat 3, and TypeScript**.
 
-Store a number on a smart contract.
+## Features
 
-Read the stored number.
+- Store a number in a smart contract.
+- Read the stored number from the blockchain.
+- Update the stored number through a blockchain transaction.
+- Run automated smart contract tests.
+- Deploy the contract to a local Hardhat blockchain.
 
-Update the stored number through a blockchain transaction.
+## Tech Stack
 
-Run automated smart contract tests.
+- **Solidity** — Smart contract development
+- **Hardhat 3** — Development, compilation, testing, and deployment
+- **TypeScript** — Deployment scripts and automated tests
+- **Ethers.js** — Smart contract interaction
+- **Mocha & Chai** — Testing
+- **Node.js** — JavaScript runtime
 
-Deploy the contract to a local Hardhat blockchain.
+## Smart Contract
 
-Tech Stack
+The `SimpleStorage.sol` contract provides two functions:
 
-Solidity
+| Function | Description |
+|---|---|
+| `setNumber(uint256 _number)` | Updates the stored number |
+| `getNumber()` | Returns the stored number |
 
-Hardhat 3
+## Getting Started
 
-TypeScript
+### Prerequisites
 
-Ethers.js
+- Node.js
+- npm
+- Git
 
-Mocha and Chai
+### 1. Clone the repository
 
-Node.js
+```bash
+git clone https://github.com/drean1/Simple-Storage-Web3-Learning-Project.git
+cd Simple-Storage-Web3-Learning-Project/simple-storage
+```
 
-Smart Contract
+### 2. Install dependencies
 
-SimpleStorage.sol provides two functions:
-
-setNumber(uint256 _number): Updates the stored number.
-
-getNumber(): Returns the stored number.
-
-Getting Started
-
-1. Install dependencies
-
+```bash
 npm install
+```
 
-2. Compile the smart contract
+### 3. Compile the smart contract
 
+```bash
 npx hardhat build
+```
 
-3. Run tests
+### 4. Run automated tests
 
+```bash
 npx hardhat test
+```
 
-4. Start a local blockchain
+### 5. Start a local blockchain
 
+```bash
 npx hardhat node
+```
 
-Keep this terminal running.
+Keep this terminal running while using the local blockchain.
 
-5. Deploy to the local blockchain
+### 6. Deploy the contract
 
-Open another terminal and run:
+Open a second terminal in the `simple-storage` directory and run:
 
+```bash
 npx hardhat run scripts/deploy.ts --network localhost
+```
 
-Copy the contract address printed in the terminal.
+After deployment, the terminal will display the contract address.
 
-Learning Progress
+## Learning Progress
 
-Create a Solidity smart contract
+- [x] Create a Solidity smart contract
+- [x] Compile the contract
+- [x] Write and run automated tests
+- [x] Deploy to a local Hardhat blockchain
+- [ ] Interact with the deployed contract using a separate script
+- [ ] Build a frontend to interact with the smart contract
 
-Compile the contract
+## Disclaimer
 
-Write and run automated tests
-
-Deploy to a local Hardhat blockchain
-
-Interact with the deployed contract using a separate script
-
-Build a frontend to interact with the smart contract
-
-Disclaimer
-
-This project is for learning and local development only. It has not been audited and is not intended for production use.
+This project is for educational and local development purposes only. The smart contract has not been audited and is not intended for production use.
