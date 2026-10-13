@@ -1,4 +1,4 @@
-My first hands-on Web3 project, built to learn smart contract development using Solidity, Hardhat, and TypeScript.
+#My first hands-on Web3 project, built to learn smart contract development using Solidity, Hardhat, and TypeScript.
 
 Features
 
