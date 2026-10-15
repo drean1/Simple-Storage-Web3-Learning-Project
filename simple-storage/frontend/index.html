@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Storage | Web3 dApp</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <div class="brand">WEB3 LEARNING PROJECT</div>
+        <h1>Simple Storage</h1>
+        <p class="subtitle">Store and retrieve data on the blockchain.</p>
+      </header>
+
+      <section class="wallet-card">
+        <div>
+          <p class="label">Wallet Status</p>
+          <p id="walletStatus">Not connected</p>
+        </div>
+        <button id="connectButton">Connect Wallet</button>
+      </section>
+
+      <section class="storage-card">
+        <p class="label">STORED NUMBER</p>
+        <h2 id="currentNumber">—</h2>
+
+        <button id="refreshButton" class="secondary" disabled>
+          Refresh Data
+        </button>
+
+        <div class="divider"></div>
+
+        <label for="numberInput">Enter a new number</label>
+        <input
+          type="number"
+          id="numberInput"
+          placeholder="e.g. 500"
+          min="0"
+          step="1"
+        />
+
+        <button id="saveButton" class="primary" disabled>
+          Save to Blockchain
+        </button>
+
+        <p id="message" role="status" aria-live="polite">
+          Connect your wallet to get started.
+        </p>
+
+        <div id="transactionInfo" hidden>
+          <p class="label">TRANSACTION HASH</p>
+          <a
+            id="transactionLink"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+        </div>
+      </section>
+
+      <footer>
+        <span class="network-dot"></span>
+        Hardhat Local Network · Chain ID 31337
+      </footer>
+    </main>
+  </body>
+</html>

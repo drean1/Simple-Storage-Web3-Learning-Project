@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b1120;
+  color: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand {
+  color: #2dd4bf;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.wallet-card,
+.storage-card {
+  background: #151f32;
+  border: 1px solid #29364c;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.wallet-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.wallet-card p {
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+
+.label {
+  color: #94a3b8;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.primary,
+#connectButton {
+  background: #2dd4bf;
+  color: #0b1120;
+}
+
+.secondary {
+  background: #29364c;
+  color: #f8fafc;
+}
+
+.storage-card {
+  text-align: center;
+}
+
+.storage-card h2 {
+  color: #2dd4bf;
+  font-size: 60px;
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+
+.divider {
+  height: 1px;
+  background: #29364c;
+  margin: 26px 0;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #0b1120;
+  color: white;
+  border: 1px solid #37465e;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: 2px solid #2dd4bf;
+  border-color: transparent;
+}
+
+#saveButton {
+  width: 100%;
+}
+
+#message {
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  margin-top: 18px;
+}
+
+#transactionInfo {
+  margin-top: 20px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+#transactionLink {
+  color: #2dd4bf;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 11px;
+  margin-top: 24px;
+}
+
+.network-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2dd4bf;
+}
+
+@media (max-width: 380px) {
+  .wallet-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
