@@ -1,93 +1,162 @@
 # Simple Storage — Web3 Learning Project
 
-A beginner-friendly Web3 project built to explore smart contract development using **Solidity, Hardhat 3, and TypeScript**.
+A beginner-friendly Web3 project built to learn smart contract development, blockchain interaction, and wallet integration using Solidity, Hardhat, and Ethers.js.
+
+## Overview
+
+Simple Storage is a decentralized application (dApp) that allows users to store and retrieve a number on a local Ethereum-compatible blockchain through a web interface.
+
+This project is part of my hands-on learning journey into Web3 development and smart contract fundamentals.
 
 ## Features
 
-- Store a number in a smart contract.
-- Read the stored number from the blockchain.
-- Update the stored number through a blockchain transaction.
-- Run automated smart contract tests.
-- Deploy the contract to a local Hardhat blockchain.
+- **Smart Contract:** Store and retrieve a number using Solidity.
+- **Wallet Integration:** Connect a MetaMask wallet to the application.
+- **Blockchain Transactions:** Update stored values through on-chain transactions.
+- **Transaction Confirmation:** Wait for blockchain transaction confirmation before updating the displayed value.
+- **Local Blockchain:** Develop and test using a local Hardhat network.
 
 ## Tech Stack
 
-- **Solidity** — Smart contract development
-- **Hardhat 3** — Development, compilation, testing, and deployment
-- **TypeScript** — Deployment scripts and automated tests
-- **Ethers.js** — Smart contract interaction
-- **Mocha & Chai** — Testing
-- **Node.js** — JavaScript runtime
+- Solidity
+- Hardhat
+- TypeScript
+- JavaScript
+- Ethers.js
+- HTML & CSS
+- MetaMask
+- Node.js and npm
 
-## Smart Contract
+## Project Structure
 
-The `SimpleStorage.sol` contract provides two functions:
-
-| Function | Description |
-|---|---|
-| `setNumber(uint256 _number)` | Updates the stored number |
-| `getNumber()` | Returns the stored number |
+```text
+simple-storage/
+├── contracts/
+│   └── SimpleStorage.sol
+├── scripts/
+│   ├── deploy.ts
+│   └── interact.ts
+├── test/
+│   └── SimpleStorage.ts
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+├── hardhat.config.ts
+├── package.json
+└── README.md
+```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js
-- npm
-- Git
+Make sure you have installed:
 
-### 1. Clone the repository
+- Node.js and npm
+- Git
+- MetaMask browser extension
+- VS Code or another code editor
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/drean1/Simple-Storage-Web3-Learning-Project.git
 cd Simple-Storage-Web3-Learning-Project/simple-storage
 ```
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Compile the smart contract
+### 3. Build the Project
 
 ```bash
 npx hardhat build
 ```
 
-### 4. Run automated tests
+### 4. Start the Local Blockchain
 
-```bash
-npx hardhat test
-```
-
-### 5. Start a local blockchain
+Open a terminal and run:
 
 ```bash
 npx hardhat node
 ```
 
-Keep this terminal running while using the local blockchain.
+Keep this terminal running while using the application.
 
-### 6. Deploy the contract
+### 5. Deploy the Smart Contract
 
-Open a second terminal in the `simple-storage` directory and run:
+Open another terminal in the `simple-storage` directory:
 
 ```bash
 npx hardhat run scripts/deploy.ts --network localhost
 ```
 
-After deployment, the terminal will display the contract address.
+Copy the deployed contract address and update the contract address configuration in `frontend/app.js` before using the frontend.
 
-## Learning Progress
+If you use `scripts/interact.ts`, update its contract address as well.
 
-- [x] Create a Solidity smart contract
-- [x] Compile the contract
-- [x] Write and run automated tests
-- [x] Deploy to a local Hardhat blockchain
-- [ ] Interact with the deployed contract using a separate script
-- [ ] Build a frontend to interact with the smart contract
+### 6. Configure MetaMask
 
-## Disclaimer
+Add a custom network to MetaMask using the following settings:
 
-This project is for educational and local development purposes only. The smart contract has not been audited and is not intended for production use.
+| Setting | Value |
+|---|---|
+| Network Name | Hardhat Local |
+| RPC URL | `http://127.0.0.1:8545` |
+| Chain ID | `31337` |
+| Currency Symbol | ETH |
+
+For local testing, import a test account provided by Hardhat if needed.
+
+### 7. Run the Frontend
+
+Open `frontend/index.html` using the VS Code Live Server extension, or serve the frontend using another local HTTP server.
+
+Connect MetaMask, select the Hardhat Local network, and interact with the smart contract through the interface.
+
+## Testing
+
+Run the automated smart contract tests:
+
+```bash
+npx hardhat test
+```
+
+The tests cover the initial stored value and updating the stored number.
+
+## Learning Objectives
+
+Through this project, I am learning how to:
+
+- Write and compile smart contracts using Solidity.
+- Deploy contracts to a local blockchain.
+- Interact with contracts using Ethers.js.
+- Connect a browser wallet using MetaMask.
+- Understand blockchain transactions and confirmation flows.
+- Test smart contract functionality using Hardhat.
+
+## Security Notes
+
+- This project is intended for educational and local development purposes.
+- Never use Hardhat's publicly known test private keys on mainnet or with real funds.
+- Never commit private keys, seed phrases, passwords, or other sensitive credentials to GitHub.
+- Restarting the local Hardhat node resets its blockchain state, so the contract must be redeployed.
+
+## Future Improvements
+
+- Add smart contract events to track stored-value updates.
+- Display transaction hashes and event logs in the frontend.
+- Improve frontend validation and error handling.
+- Add deployment and interaction support for a public testnet.
+
+## Author
+
+**Andrean**
+
+GitHub: [@drean1](https://github.com/drean1)
+
+Portfolio: [portfolio-andrean.netlify.app](https://portfolio-andrean.netlify.app)
